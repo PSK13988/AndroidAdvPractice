@@ -8,7 +8,7 @@ import android.widget.Button;
 
 public class HomeActivity extends AppCompatActivity {
     private static final String TAG = "HomeActivity";
-    private Button btnActivityToFragment, btnDialogFragmentToFragment, btnRecyclerView, btnViewPager, btnBottomMenu;
+    private Button btnActivityToFragment, btnDialogFragmentToFragment, btnRecyclerView, btnViewPager, btnBottomMenu, btnEsignature;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +19,7 @@ public class HomeActivity extends AppCompatActivity {
         btnRecyclerView = (Button) findViewById(R.id.btnRecyclerView);
         btnViewPager = (Button) findViewById(R.id.btnViewPager);
         btnBottomMenu = (Button) findViewById(R.id.btnBottomMenu);
+        btnEsignature = (Button) findViewById(R.id.btnEsignature);
 
         btnActivityToFragment.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,6 +53,13 @@ public class HomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(HomeActivity.this, BottomMenuActivity.class));
+            }
+        });
+
+        btnEsignature.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(HomeActivity.this, ESignatureActivity.class));
             }
         });
     }
